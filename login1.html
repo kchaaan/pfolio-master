@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Black Themed Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #0e0e0e;
+      background-image: url('C:/Users/Chaaaan/Downloads/pfolio-master/pfolio-master/assets/images/22231.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: rgba(20, 20, 20, 0.95);
+      backdrop-filter: blur(5px);
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 16px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+    }
+
+    .login-form h2 {
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      font-size: 28px;
+    }
+
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .input-group label {
+      display: block;
+      color: #ccc;
+      margin-bottom: 0.5rem;
+      font-size: 14px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background-color: #1a1a1a;
+      color: #eee;
+      font-size: 1rem;
+    }
+
+    .input-group input:focus {
+      border: 1px solid #0f62fe;
+      outline: none;
+      background-color: #222;
+    }
+
+    .show-password {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-top: -0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .show-password input[type="checkbox"] {
+      accent-color: #0f62fe;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    .show-password label {
+      cursor: pointer;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      background: #0f62fe;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #005ce6;
+    }
+
+    .forgot {
+      color: #888;
+      text-align: center;
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .forgot:hover {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <form class="login-form">
+      <h2>Login</h2>
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter username" required />
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password" required />
+      </div>
+      <div class="show-password">
+        <input type="checkbox" id="togglePassword" />
+        <label for="togglePassword">Show Password</label>
+      </div>
+      <button type="submit">Login</button>
+      <p class="forgot">Forgot password?</p>
+    </form>
+  </div>
+
+  <script>
+    // Login logic
+    document.querySelector('.login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (username === 'DERA' && password === 'DERA123') {
+        alert('✅ Login successful! GO TO MY PFOLIO');
+        setTimeout(() => {
+          window.location.href = "file:///C:/Users/Chaaaan/Downloads/pfolio-master/pfolio-master/index.html";
+        }, 1000);
+      } else {
+        alert('❌ Invalid username or password.');
+      }
+    });
+
+    // Show password toggle
+    document.getElementById('togglePassword').addEventListener('change', function () {
+      const pwd = document.getElementById('password');
+      pwd.type = this.checked ? 'text' : 'password';
+    });
+  </script>
+
+</body>
+</html>
